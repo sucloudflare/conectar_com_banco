@@ -29,45 +29,44 @@
   <li>Use o IP público da sua máquina local ou configure para permitir qualquer IP temporariamente (<code>0.0.0.0/0</code>).</li>
     </ol>
 
-    <h3>Conexão do Colab:</h3>
-    <ul>
-        <li>Certifique-se de que o Colab tenha acesso à internet.</li>
-        <li>Adicione a biblioteca necessária no início do código (<code>!pip install ...</code>).</li>
-    </ul>
+  <h3>Conexão do Colab:</h3>
+  <ul>
+  <li>Certifique-se de que o Colab tenha acesso à internet.</li>
+ <li>Adicione a biblioteca necessária no início do código (<code>!pip install ...</code>).</li>
+  </ul>
 
-    <h3>Conexão do Workbench:</h3>
-    <ul>
+<h3>Conexão do Workbench:</h3>
+<ul>
         <li>No Workbench escolhido, use o IP do banco de dados no Google Cloud e configure o usuário, senha e porta.</li>
-    </ul>
+</ul>
 
-    <h2>Etapa 2: Criando um Banco de Dados</h2>
-    <h3>PostgreSQL</h3>
-    <pre><code>CREATE DATABASE meu_banco;</code></pre>
+<h2>Etapa 2: Criando um Banco de Dados</h2>
+<h3>PostgreSQL</h3>
+<pre><code>CREATE DATABASE meu_banco;</code></pre>
 
-    <h3>MySQL</h3>
-    <pre><code>CREATE DATABASE meu_banco;</code></pre>
+<h3>MySQL</h3>
+<pre><code>CREATE DATABASE meu_banco;</code></pre>
 
-    <h3>SQL Server</h3>
-    <pre><code>CREATE DATABASE meu_banco;</code></pre>
+<h3>SQL Server</h3>
+<pre><code>CREATE DATABASE meu_banco;</code></pre>
 
-    <h3>BigQuery</h3>
-    <ol>
-        <li>Acesse o console do Google Cloud.</li>
-        <li>No BigQuery, clique em "Criar Conjunto de Dados" e preencha as informações necessárias.</li>
-        <li>O conjunto de dados será equivalente a um banco de dados.</li>
-    </ol>
+<h3>BigQuery</h3>
+<ol>
+<li>Acesse o console do Google Cloud.</li>
+<li>No BigQuery, clique em "Criar Conjunto de Dados" e preencha as informações necessárias.</li>
+<li>O conjunto de dados será equivalente a um banco de dados.</li>
+</ol>
 
-    <h2>Etapa 3: Importando Arquivos CSV ou SQL</h2>
-    <h3>Carregar Arquivo no Google Cloud Storage</h3>
-    <ol>
-        <li>Vá para <strong>Storage &gt; Buckets</strong>.</li>
-        <li>Faça upload do arquivo CSV ou SQL.</li>
-        <li>Use o caminho do arquivo no Google Cloud Storage (<code>gs://bucket-name/file-name.csv</code>).</li>
-    </ol>
-
-    <h3>Importando CSV</h3>
-    <h4>PostgreSQL:</h4>
-    <pre><code>COPY table_name
+<h2>Etapa 3: Importando Arquivos CSV ou SQL</h2>
+<h3>Carregar Arquivo no Google Cloud Storage</h3>
+  <ol>
+<li>Vá para <strong>Storage &gt; Buckets</strong>.</li>
+ <li>Faça upload do arquivo CSV ou SQL.</li>
+ <li>Use o caminho do arquivo no Google Cloud Storage (<code>gs://bucket-name/file-name.csv</code>).</li>
+ </ol>
+<h3>Importando CSV</h3>
+<h4>PostgreSQL:</h4>
+<pre><code>COPY table_name
 FROM 'gs://bucket-name/file.csv'
 DELIMITER ','
 CSV HEADER;</code></pre>
