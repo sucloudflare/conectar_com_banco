@@ -8,11 +8,11 @@
   <li>Ferramentas instaladas em sua máquina local:
   <ul>
     <li>Python 3.x (com bibliotecas como <code>psycopg2</code>, <code>mysql-connector-python</code>, <code>pyodbc</code>, <code>pandas</code>, <code>google-cloud-bigquery</code>).</li>
-    <li>Workbench apropriado para cada banco de dados (pgAdmin, MySQL Workbench, Azure Data Studio).</li>
-    <li>Google Cloud SDK (para BigQuery e Cloud Storage).</li>
-         <li>Permissões de rede para conexão externa (liberar IPs no firewall, configurar VPCs).</li>
-      </ul>
-    </li>
+  <li>Workbench apropriado para cada banco de dados (pgAdmin, MySQL Workbench, Azure Data Studio).</li>
+  <li>Google Cloud SDK (para BigQuery e Cloud Storage).</li>
+<li>Permissões de rede para conexão externa (liberar IPs no firewall, configurar VPCs).</li>
+</ul>
+</li>
   </ul>
 
   <h2>Etapa 1: Configuração de Rede para Acessar Bancos de Dados</h2>
@@ -70,16 +70,15 @@
 FROM 'gs://bucket-name/file.csv'
 DELIMITER ','
 CSV HEADER;</code></pre>
-
-    <h4>MySQL:</h4>
-    <pre><code>LOAD DATA INFILE 'gs://bucket-name/file.csv'
+<h4>MySQL:</h4>
+<pre><code>LOAD DATA INFILE 'gs://bucket-name/file.csv'
 INTO TABLE table_name
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;</code></pre>
 
-    <h4>SQL Server:</h4>
+<h4>SQL Server:</h4>
     <pre><code>BULK INSERT table_name
 FROM 'gs://bucket-name/file.csv'
 WITH (
@@ -87,17 +86,16 @@ WITH (
     ROWTERMINATOR = '\n',
     FIRSTROW = 2
 );</code></pre>
-
-    <h4>BigQuery:</h4>
+<h4>BigQuery:</h4>
     <p>No console do BigQuery, clique em <strong>Criar Tabela</strong> e selecione o arquivo no Storage.</p>
 
-    <h3>Executando Arquivos SQL</h3>
+<h3>Executando Arquivos SQL</h3>
     <pre><code>\i 'path/to/file.sql'; -- PostgreSQL
 SOURCE 'path/to/file.sql'; -- MySQL
 EXEC ('path/to/file.sql'); -- SQL Server</code></pre>
 
     <h2>Etapa 4: Conectar no Colab</h2>
-    <h3>PostgreSQL</h3>
+<h3>PostgreSQL</h3>
     <pre><code>!pip install psycopg2
 import psycopg2
 
@@ -111,7 +109,7 @@ cursor = conn.cursor()
 cursor.execute("SELECT * FROM tabela;")
 print(cursor.fetchall())</code></pre>
 
-    <h3>MySQL</h3>
+<h3>MySQL</h3>
     <pre><code>!pip install mysql-connector-python
 import mysql.connector
 
@@ -125,7 +123,7 @@ cursor = conn.cursor()
 cursor.execute("SELECT * FROM tabela;")
 print(cursor.fetchall())</code></pre>
 
-    <h3>SQL Server</h3>
+<h3>SQL Server</h3>
     <pre><code>!pip install pyodbc
 import pyodbc
 
@@ -140,7 +138,7 @@ cursor = conn.cursor()
 cursor.execute("SELECT * FROM tabela;")
 print(cursor.fetchall())</code></pre>
 
-    <h3>BigQuery</h3>
+<h3>BigQuery</h3>
     <pre><code>!pip install google-cloud-bigquery
 from google.cloud import bigquery
 
@@ -156,7 +154,7 @@ print(df)</code></pre>
 <ul>
 <li><a href="https://cloud.google.com/sdk" target="_blank">Google Cloud SDK</a></li>
 <li><a href="https://pandas.pydata.org/docs/" target="_blank">Pandas Documentation</a></li>
-  <li><a href="https://www.psycopg.org/docs/" target="_blank">psycopg2 Documentation</a></li>
+<li><a href="https://www.psycopg.org/docs/" target="_blank">psycopg2 Documentation</a></li>
 <li><a href="https://dev.mysql.com/doc/connector-python/en/" target="_blank">MySQL Connector Documentation</a></li>
 <li><a href="https://github.com/mkleehammer/pyodbc" target="_blank">PyODBC Documentation</a></li>
 </ul>
