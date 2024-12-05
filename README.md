@@ -94,7 +94,7 @@ WITH (
 SOURCE 'path/to/file.sql'; -- MySQL
 EXEC ('path/to/file.sql'); -- SQL Server</code></pre>
 
-    <h2>Etapa 4: Conectar no Colab</h2>
+<h2>Etapa 4: Conectar no Colab</h2>
 <h3>PostgreSQL</h3>
     <pre><code>!pip install psycopg2
 import psycopg2
